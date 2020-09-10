@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style media="screen">
+      p{
+        background-color:red;
+      }
+      .group{
+        background-color:blue;
+      }
+      #justThisOne{
+        background-color:purple;
+      }
+    </style>
+    <script type="text/javascript">
+
+      $( document ).ready(function() {
+
+          $("#paraColor1").click(function(){
+              $("p").css("background-color","blue");
+          });
+
+          $(".group").hover(function(){
+              $(".group").css("background-color","green");
+          });
+
+          $("#justThisOne").click(function(){
+              $("#justThisOne").css("background-color","orange");
+              //$(this).css("background-color","orange");
+          });
+
+          $("#setFont").click(function(){
+              $("p").css({
+                "font-family":"arial",
+                "font-size":"35px",
+              });
+          });
+
+              
+
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1>CSS with jQuery</h1>
+
+    <div id="cssMenu">
+      <input type="button" id="paraColor1" value="All Paragraph Color - Red">
+      <input type="button" id="paraColor2" value="Paragraph Group Color - Green">
+      <input type="button" id="setFont" value="Set Font">
+    </div>
+
+    <p>text text text text text text text text text text text text text text text text text text text text text text </p>
+
+    <p class="group">text text text text text text text text text text text text text text text text text text text text text text </p>
+
+    <p>text text text text text text text text text text text text text text text text text text text text text text </p>
+
+    <p class="group">text text text text text text text text text text text text text text text text text text text text text text </p>
+
+    <p id="justThisOne" title="click me">text text text text text text text text text text text text text text text text text text text text text text </p>
+
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style media="screen">
+      #imgMenu{
+        border:solid 1px;
+        padding:10px;
+      }
+      #imgMenu img{
+        width:100px;
+        cursor: pointer;
+      }
+    </style>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+          $("#imgMenu img").click(function(){
+              //console.log(this);
+              var img="<img src='"+this.src+"'>";
+              $("#galleryDisplay").html(img);
+          });
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1>Gallery</h1>
+    <div id="imgMenu">
+      <img src="img/photo1.jpg" alt="">
+      <img src="img/photo2.jpg" alt="">
+      <img src="img/photo3.jpg" alt="">
+      <img src="img/photo4.jpg" alt="">
+    </div>
+    <div id="galleryDisplay">
+
+    </div>
+
+
+
+  </body>
+</html>

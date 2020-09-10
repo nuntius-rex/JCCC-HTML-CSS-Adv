@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery To Do</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style media="screen">
+      #container1{
+        border:solid 1px;
+        padding:10px;
+      }
+      #HideBTN{
+        float: right;
+      }
+    </style>
+
+    <script type="text/javascript">
+      $( document ).ready(function() {
+          //console.log( "ready!" );
+          //console.log($);
+
+          $("#container1").hide();
+
+          $("#ShowBTN").click(function(){
+              $("#container1").show();
+              $("#ShowBTN").hide();
+          });
+
+          $("#HideBTN").click(function(){
+              $("#container1").hide();
+              $("#ShowBTN").show();
+          });
+
+          $("#AddBTN").click(function(){
+              var entry=$("#ToDoEntry").val();
+              $("#ToDoContent").append("<p>"+entry+"</p>");
+
+              /*
+              SAVE FOR LATER!!!
+              $("#ToDoContent p").click(function(){
+                  console.log(this);
+              });
+              */
+          });
+
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1>jQuery</h1>
+
+    <p>
+      <input type="button" id="ShowBTN" value="Show">
+    </p>
+
+    <div id="container1">
+        <input type="button" id="HideBTN" value="Hide">
+        <input type="text" id="ToDoEntry">
+        <input type="button" value="Add" id="AddBTN">
+
+        <div id="ToDoContent">
+          <!--Content-->
+        </div>
+
+    </div>
+
+
+
+
+  </body>
+</html>

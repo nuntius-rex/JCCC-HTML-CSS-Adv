@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style media="screen">
+      #gallery{
+        border:solid 1px;
+        padding:10px;
+        display:flex;
+        flex-wrap:wrap;
+        /*
+          flex-wrap:wrap;
+          flex-wrap:nowrap;
+          flex-wrap:wrap-reverse;
+        */
+        flex-direction: column;
+        /*
+          flex-direction: row;
+          flex-direction: row-reverse;
+          flex-direction: column;
+          flex-direction: column-reverse;
+        */
+        justify-content: space-around;
+      }
+
+      #gallery img{
+        width:200px;
+        height:150px;
+        margin: .5em;
+      }
+    </style>
+
+    <script type="text/javascript">
+    
+      $( document ).ready(function() {
+        $("#colReverseBTN").click(function(){
+          var toggle=$("#gallery").css("flex-direction");
+          if(toggle=="column"){
+            $("#gallery").css("flex-direction","column-reverse");
+          }else{
+            $("#gallery").css("flex-direction","column");
+          }
+        });
+      });
+
+    </script>
+
+
+
+  </head>
+  <body>
+    <h1>Flexbox</h1>
+
+    <input type="button" value="Column Reverse" id="colReverseBTN">
+
+    <div id="gallery">
+      <img src="img/bird1.jpg" alt="Bird 1">
+      <img src="img/bird2.jpg" alt="Bird 1">
+      <img src="img/bird3.jpg" alt="Bird 1">
+      <img src="img/bird4.jpg" alt="Bird 1">
+      <img src="img/bird5.jpg" alt="Bird 1">
+      <img src="img/bird6.jpg" alt="Bird 1">
+    </div>
+
+  </body>
+</html>
